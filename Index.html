@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pingo Development</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+   <!-- Header -->
+   <!-- Header modificato: solo link di navigazione -->
+   <header>
+       <div class="container nav-container">
+           <nav class="nav-links">
+               <a href="#" class="active">Home</a>
+               <a href="#services">Servizi</a>
+               <a href="#pricing">Prezzi</a>
+               <a href="#portfolio">Portfolio</a>
+               <a href="#contact">Contatti</a>
+           </nav>
+           <div class="mobile-menu-btn">
+               <i class="fas fa-bars"></i>
+           </div>
+       </div>
+   </header>
+
+   <!-- Hero Section senza testo e pulsanti -->
+   <section class="hero-section">
+       <!-- Nessun contenuto qui, solo lo sfondo dell'immagine banner -->
+   </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">I NOSTRI SERVIZI</h2>
+            <p class="section-subtitle">Soluzioni digitali personalizzate per ogni esigenza</p>
+            
+            <div class="services-container">
+                <!-- iOS App Development Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3>iOS App Development</h3>
+                    <p>Sviluppiamo applicazioni native per iPhone e iPad con un'esperienza utente impeccabile e prestazioni ottimizzate.</p>
+                    <ul class="service-features">
+                        <li>Design UI/UX nativo</li>
+                        <li>Integrazione con Apple Services</li>
+                        <li>Ottimizzazione performance</li>
+                        <li>Pubblicazione su App Store</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Maggiori informazioni</a>
+                </div>
+                
+                <!-- Android App Development Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h3>Android App Development</h3>
+                    <p>Creiamo applicazioni Android performanti e scalabili per raggiungere una vasta gamma di dispositivi e utenti.</p>
+                    <ul class="service-features">
+                        <li>Material Design</li>
+                        <li>Compatibilità multi-dispositivo</li>
+                        <li>Integrazione API Google</li>
+                        <li>Pubblicazione su Play Store</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Maggiori informazioni</a>
+                </div>
+                
+                <!-- Web Development Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+
+                    <h3>Web Development</h3>
+                    <p>Realizziamo siti web e applicazioni web responsive, veloci e ottimizzati per i motori di ricerca.</p>
+                    <ul class="service-features">
+                        <li>Design responsive</li>
+                        <li>Frontend moderno</li>
+                        <li>Backend scalabile</li>
+                        <li>SEO ottimizzato</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Maggiori informazioni</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">IL NOSTRO PROCESSO</h2>
+            <p class="section-subtitle">Come lavoriamo per trasformare la tua idea in realtà</p>
+            
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Analisi e Pianificazione</h3>
+                        <p>Comprendiamo le tue esigenze e definiamo obiettivi chiari per il tuo progetto digitale.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Design UI/UX</h3>
+                        <p>Creiamo un'interfaccia utente intuitiva e un'esperienza utente coinvolgente e funzionale.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Sviluppo</h3>
+                        <p>Implementiamo il progetto utilizzando le tecnologie più adatte e seguendo le migliori pratiche.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Test e Ottimizzazione</h3>
+                        <p>Testiamo rigorosamente ogni funzionalità e ottimizziamo per garantire prestazioni eccellenti.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Lancio e Supporto</h3>
+                        <p>Pubblichiamo la tua soluzione e forniamo supporto continuo per garantirne il successo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">TARIFFE TRASPARENTI</h2>
+            <p class="section-subtitle">Scegli il piano perfetto per te</p>
+            
+            <div class="pricing-container">
+                <!-- App Web -->
+                <!-- App Web (senza badge) -->
+                <div class="pricing-card">
+                    <h3 class="package-title">App Web</h3>
+                    <p class="package-description">Funzionalità essenziali per la tua presenza online.</p>
+
+                    <div class="price-container">
+                        <h4 class="price">€ 499</h4>
+                        <p class="payment-terms">PAGABILI IN 3 RATE</p>
+                    </div>
+
+                    <ul class="features-list">
+                        <li>Design Responsive</li>
+                        <li>5+ Pagine Incluse</li>
+                        <li>Supporto Tecnico</li>
+                        <li>Assistenza via WhatsApp</li>
+                    </ul>
+
+                    <a href="#contact" class="cta-button">Richiedi Preventivo</a>
+                </div>
+
+                <!-- App Nativa (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="featured-tag">Il più scelto ↓</div>
+                    <h3 class="package-title">App Nativa</h3>
+                    <p class="package-description">La soluzione completa per iOS e Android.</p>
+                    <div class="discount-badge">Risparmi il 18%</div>
+
+                    <div class="price-container">
+                        <h4 class="price">€ 899</h4>
+                        <span class="original-price">€ 1099</span>
+                        <p class="payment-terms">PAGABILI IN 3 RATE</p>
+                    </div>
+
+                    <ul class="features-list">
+                        <li>Compatibilità iOS e Android</li>
+                        <li>Funzionalità Personalizzate</li>
+                        <li>Supporto Tecnico Premium</li>
+                        <li>Assistenza via WhatsApp</li>
+                    </ul>
+
+                    <a href="#contact" class="cta-button">Richiedi Preventivo</a>
+                </div>
+
+                <!-- Soluzione Completa -->
+                <div class="pricing-card">
+                    <h3 class="package-title">Soluzione Completa</h3>
+                    <p class="package-description">App nativa + sito web ottimizzato.</p>
+                    <div class="discount-badge">Risparmi il 21%</div>
+
+                    <div class="price-container">
+                        <h4 class="price">€ 1499</h4>
+                        <span class="original-price">€ 1899</span>
+                        <p class="payment-terms">PAGABILI IN 3 RATE</p>
+                    </div>
+
+                    <ul class="features-list">
+                        <li>App Nativa + Sito Web</li>
+                        <li>Design Premium</li>
+                        <li>Supporto Tecnico Prioritario</li>
+                        <li>Assistenza via WhatsApp</li>
+                    </ul>
+
+                    <a href="#contact" class="cta-button">Richiedi Preventivo</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio-section">
+    <div class="container">
+        <h2 class="section-title">IL NOSTRO PORTFOLIO</h2>
+        <p class="section-subtitle">I nostri progetti principali</p>
+        
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Tutti</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="web">
+                <img src="images/app_web.png" alt="App Web">
+                <div class="portfolio-overlay">
+                    <h3>App Web</h3>
+                    <p>Applicazione Web Responsive</p>
+                    <a href="#" class="portfolio-link">Vedi Dettagli</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="mobile">
+                <img src="images/ios_android.png" alt="App Mobile">
+                <div class="portfolio-overlay">
+                    <h3>App Mobile</h3>
+                    <p>iOS & Android</p>
+                    <a href="#" class="portfolio-link">Vedi Dettagli</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="web">
+                <img src="images/sito_web.png" alt="Sito Web">
+                <div class="portfolio-overlay">
+                    <h3>Sito Web</h3>
+                    <p>Pagina Web Aziendale</p>
+                    <a href="#" class="portfolio-link">Vedi Dettagli</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">TESTIMONIANZE</h2>
+            <p class="section-subtitle">Riferimenti di clienti soddisfatti che hanno già beneficiato delle nostre soluzioni</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Pingo Development ha trasformato la mia idea in un'app di successo. Professionalità e competenza al top!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Marco Rossi</h4>
+                            <p>CEO, TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"La nostra app è stata consegnata in tempo e con un design eccezionale. Consigliatissimo!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Laura Bianchi</h4>
+                            <p>Marketing Manager, InnovaRetail</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Servizio impeccabile e sempre disponibili per supporto. La nostra applicazione web ha superato le aspettative."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Giovanni Verdi</h4>
+                            <p>Founder, EcoStart</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">CONTATTACI</h2>
+            <p class="section-subtitle">Parliamo del tuo progetto</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-info-content">
+                            <h3>Email</h3>
+                            <p>j.pingo.development@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-info-content">
+                            <h3>Telefono</h3>
+                            <p>+39 331 2754741</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-info-content">
+                            <h3>Sede</h3>
+                            <p>Massa, Italia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Oggetto</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Invia Messaggio</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Pingo Development</h3>
+                    <p>Trasformiamo le tue idee in realtà digitali</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Link Rapidi</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Servizi</a></li>
+                        <li><a href="#pricing">Prezzi</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contatti</a></li>
+                    </ul>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Rimani Aggiornato</h4>
+                    <p>Iscriviti alla nostra newsletter per ricevere aggiornamenti e offerte speciali</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="La tua email">
+                        <button type="submit">Iscriviti</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2025 Pingo Development. Tutti i diritti riservati.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
