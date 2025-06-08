@@ -1571,20 +1571,15 @@ footer::before {
 }
 
 @media (max-width: 480px) {
-    .hero-section {
-        padding: 100px 0; /* Ulteriore riduzione per schermi più piccoli */
-        height: 40vh;
+    .logo-image {
+        height: 70px;
+        top: -5px;
     }
-}
 
-   @media (max-width: 768px) {
     .hero-section {
-        background-size: cover;
-        background-position: center;
-        padding: 150px 0; /* Riduciamo il padding per non distorcere l'immagine */
-        height: 50vh; /* Altezza fissa proporzionale alla viewport */
+        padding: 120px 0;
     }
-}
+
     .hero-content h1 {
         font-size: 24px;
     }
