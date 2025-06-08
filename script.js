@@ -2,20 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Menu mobile
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navContainer = document.querySelector('.nav-container');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    // Apri/chiudi il menu mobile (solo una volta)
+
     mobileMenuBtn.addEventListener('click', function() {
         navContainer.classList.toggle('mobile-menu-open');
-    });
-     
-    // Chiudi il menu quando si clicca su un link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (navContainer.classList.contains('mobile-menu-open')) {
-                navContainer.classList.remove('mobile-menu-open');
-            }
-        });
     });
 
     // Portfolio filter
