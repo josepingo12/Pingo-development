@@ -164,15 +164,29 @@ header {
 /* Hero Section */
 .hero-section {
     background-color: var(--dark-color);
-    background-image: url('images/banner.png'); /* L'immagine banner originale */
-    background-size: cover;
+    background-image: url('images/banner.png');
+    background-size: contain; /* Cambiato da cover a contain */
     background-position: center;
-    padding: 300px 0;
+    background-repeat: no-repeat; /* Aggiunto per evitare ripetizioni */
+    padding: 300px 0; /* Puoi regolare questo valore in base alle esigenze */
     text-align: center;
     position: relative;
     overflow: hidden;
+    min-height: 100vh; /* Aggiunto per garantire che l'area sia abbastanza alta */
+}
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 150px 0; /* Ridotto il padding su mobile */
+        background-size: contain;
+        min-height: 50vh; /* Altezza minima proporzionale su mobile */
+    }
 }
 
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 100px 0; /* Ulteriormente ridotto su schermi molto piccoli */
+    }
+}
 hero-section::before {
     display: none; /* Nascondiamo l'overlay viola */
 }
