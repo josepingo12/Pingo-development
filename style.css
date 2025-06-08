@@ -1604,11 +1604,11 @@ footer::before {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        margin-left: 15px !important;
+        margin-left: 80px !important;
         margin-top: 0 !important;
         position: relative !important;
         z-index: 1000 !important; /* Z-index alto per assicurarsi che sia sopra altri elementi */
-        width: auto !important;
+        width: 100% !important;
     }
 
     body header .logo img.logo-image,
