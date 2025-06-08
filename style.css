@@ -183,18 +183,23 @@ img.logo-image,
     color: var(--text-color);
 }
 
-/* Hero Section */
 .hero-section {
-    background-color: transparent; /* Rimuoviamo il colore di sfondo */
+    background-color: transparent;
     background-image: url('images/banner.png');
-    background-size: 100% auto; /* Larghezza al 100%, altezza automatica */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 0; /* Nessun padding */
+    padding: 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1920/600; /* Imposta il rapporto d'aspetto esatto dell'immagine */
+    height: 600px; /* Altezza aumentata per desktop */
+    width: 100%;
+}
+
+/* Rimuoviamo aspect-ratio che causa il problema */
+.hero-section {
+    aspect-ratio: auto; /* Rimuove aspect-ratio predefinito */
 }
 .hero-section::after {
     content: '';
@@ -1792,11 +1797,11 @@ footer::before {
 }
 
 
-    /* Ottimizzazione della visualizzazione del banner su mobile */
+    /* Ottimizzazione della visualizzazione del banner desktop */
     .hero-section {
         background-size: cover !important; /* Cambiato da contain a cover per riempire meglio */
         aspect-ratio: auto !important; /* Rimuoviamo l'aspect ratio forzato */
-        height: 250px !important; /* Altezza fissa invece di padding-top */
+        height: 550px !important; /* Altezza fissa invece di padding-top */
         padding-top: 0 !important; /* Rimuovi padding-top */
     }
 
