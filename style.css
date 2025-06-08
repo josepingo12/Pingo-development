@@ -112,11 +112,12 @@ header {
 
 .nav-container {
     display: flex;
-    justify-content: center; /* Centra i link di navigazione */
+    justify-content: space-between; /* Cambia da center a space-between */
     align-items: center;
     position: relative;
     width: 100%;
 }
+
 
 /* Rimuovi il logo */
 .logo {
@@ -1492,11 +1493,9 @@ footer::before {
         font-size: 32px;
     }
 }
-
 @media (max-width: 768px) {
-    .logo-image {
-        height: 80px;
-        top: -10px;
+    .nav-container {
+        justify-content: flex-start; /* Allinea a sinistra in mobile */
     }
 
     header {
@@ -1509,30 +1508,31 @@ footer::before {
     }
 
     .nav-links {
-        display: none;
-        margin-left: 90px;
-    }
+         display: none;
+         margin-left: 0; /* Rimuovi il margine sinistro */
+     }
 
     .mobile-menu-btn {
-        display: block;
-        color: var(--primary-color);
-        font-size: 28px;
-    }
+         display: block; /* Mostra in mobile */
+         margin-right: 20px; /* Spazio a destra */
+     }
 
-    .mobile-menu-open .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%);
-        padding: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--primary-color);
-        z-index: 100;
-    }
+   .mobile-menu-open .nav-links {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 70px; /* Altezza dell'header */
+          left: 0;
+          right: 0;
+          background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%);
+          padding: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid var(--primary-color);
+          z-index: 100;
+          gap: 20px; /* Spazio tra i link */
+      }
+  }
 
     .hero-content h1 {
         font-size: 28px;
