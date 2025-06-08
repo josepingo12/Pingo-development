@@ -1597,7 +1597,7 @@ footer::before {
     .logo img.logo-image,
     img.logo-image,
     .logo-image {
-        height: 45px !important;
+        height: 80px !important;
         width: auto !important;
         max-width: none !important;
         min-height: auto !important;
