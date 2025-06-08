@@ -1725,7 +1725,7 @@ footer::before {
          display: flex !important;
          align-items: center !important;
          justify-content: flex-start !important; /* Cambiato da center a flex-start */
-         margin-left: 15px !important; /* Aggiunto margine a sinistra */
+         margin-left: 10px !important; /* Aggiunto margine a sinistra */
          margin-top: 0 !important;
          position: relative !important;
          z-index: 1000 !important;
