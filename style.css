@@ -1733,24 +1733,24 @@ footer::before {
      }
 
     body header .logo img.logo-image,
-       header .logo img.logo-image,
-       .nav-container .logo img.logo-image,
-       body header img.logo-image,
-       header img.logo-image,
-       .nav-container img.logo-image,
-       body .logo-image,
-       header .logo-image,
-       .logo-image {
-           height: 100px !important; /* Ridotta leggermente l'altezza */
-           min-height: 100px !important;
-           width: auto !important;
-           max-width: none !important;
-           min-width: 100px !important;
-           object-fit: contain !important;
-           transform: scale(1.2) !important; /* Ridotto leggermente il fattore di scala */
-           margin: 0 !important; /* Rimosso il margin auto */
-       }
-   }
+    header .logo img.logo-image,
+    .nav-container .logo img.logo-image,
+    body header img.logo-image,
+    header img.logo-image,
+    .nav-container img.logo-image,
+    body .logo-image,
+    header .logo-image,
+    .logo-image {
+        height: 150px !important;
+        min-height: 150px !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 150px !important;
+        object-fit: contain !important;
+        transform: scale(1.3) !important;
+        margin: 0 auto !important;
+    }
+
     /* Posiziona il menu hamburger correttamente a destra */
     .mobile-menu-btn {
         display: block !important;
