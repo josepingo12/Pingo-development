@@ -98,11 +98,11 @@ body {
 header {
     background: linear-gradient(90deg, rgba(26, 9, 51, 0.95) 0%, rgba(74, 0, 130, 0.95) 100%);
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-    padding: 20px 0;
+    padding: 0; /* Rimuoviamo il padding */
     position: sticky;
     top: 0;
     z-index: 100;
-    height: 70px;
+    height: 80px; /* Altezza fissa */
     display: flex;
     align-items: center;
     backdrop-filter: blur(10px);
@@ -112,16 +112,30 @@ header {
 
 .nav-container {
     display: flex;
-    justify-content: space-between; /* Cambia da center a space-between */
+    justify-content: space-between;
     align-items: center;
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
-
-/* Rimuovi il logo */
 .logo {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aggiunto per centratura orizzontale */
+    margin-left: -145px; /* Aggiunge spazio a sinistra */
+     margin-top: 15px;
+}
+
+.logo img.logo-image,
+img.logo-image,
+.logo-image {
+    height: 180px !important; /* Significativamente più grande */
+    width: auto !important;
+    max-width: none !important;
+    min-height: 180px !important;
+    object-fit: contain !important;
+    transform: scale(1.2) !important; /* Forza un ulteriore ingrandimento */
 }
 
 /* Stile dei link di navigazione */
@@ -161,6 +175,14 @@ header {
     width: 100%;
 }
 
+/* Menu mobile - nascosto di default */
+.mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
 /* Hero Section */
 .hero-section {
     background-color: transparent; /* Rimuoviamo il colore di sfondo */
@@ -174,26 +196,20 @@ header {
     overflow: hidden;
     aspect-ratio: 1920/600; /* Imposta il rapporto d'aspetto esatto dell'immagine */
 }
-
-/* Aggiungiamo un media query specifico per mobile */
-@media (max-width: 768px) {
-    .hero-section {
-        background-size: contain; /* Su mobile usiamo contain per evitare tagli */
-        aspect-ratio: auto; /* Rimuoviamo l'aspect ratio forzato */
-        height: auto; /* Altezza automatica */
-        padding-top: 52%; /* Valore percentuale basato sul rapporto dell'immagine - da regolare */
-    }
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Altezza della sfumatura */
+    background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(26, 9, 51, 0.5) 50%,
+                rgba(26, 9, 51, 0.9) 80%,
+                #2a1045 100%); /* Colore della sezione servizi */
+    pointer-events: none;
 }
-
-@media (max-width: 480px) {
-    .hero-section {
-        padding: 100px 0; /* Ulteriormente ridotto su schermi molto piccoli */
-    }
-}
-hero-section::before {
-    display: none; /* Nascondiamo l'overlay viola */
-}
-
 .hero-content {
     display: none;
 }
@@ -580,7 +596,6 @@ hero-section::before {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-
 .package-title {
     font-size: 26px;
     margin-bottom: 15px;
@@ -649,11 +664,6 @@ hero-section::before {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-
-.discount-badge {
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Leggera ombra per migliorare la leggibilità */
-}
 .features-list {
     list-style-type: none;
     padding: 0;
@@ -1394,33 +1404,6 @@ footer::before {
     font-size: 14px;
 }
 
-/* Custom Animations */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -100% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}
 /* Pulsante WhatsApp */
 .whatsapp-button {
     position: fixed;
@@ -1448,15 +1431,6 @@ footer::before {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 480px) {
-    .whatsapp-button {
-        bottom: 70px; /* Regola la posizione su schermi piccoli */
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 22px;
-    }
-}
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
@@ -1492,13 +1466,73 @@ footer::before {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--glow-color);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .logo-image {
-        height: 100px;
-        top: -20px;
+/* Custom Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
     }
+    50% {
+        transform: translateY(-10px);
+    }
+}
 
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Additional Modern Effects */
+.glow-text {
+    text-shadow: 0 0 5px var(--glow-color);
+}
+
+.shimmer {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+
+.pulsing {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* Glass Morphism Effect */
+.glass-effect {
+    background: rgba(26, 9, 51, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries */
+@media (min-width: 1000px) {
+    .logo-image {
+        height: 60px; /* Dimensione desktop */
+    }
+}
+
+@media (max-width: 992px) {
     .hero-content h1 {
         font-size: 36px;
     }
@@ -1545,56 +1579,54 @@ footer::before {
         font-size: 32px;
     }
 }
-@media (max-width: 768px) {
-    .nav-container {
-        justify-content: flex-start; /* Allinea a sinistra in mobile */
-    }
 
+@media (max-width: 768px) {
     header {
         height: auto;
         padding: 15px 0;
     }
 
     .nav-container {
+        justify-content: space-between; /* Spazio tra logo e menu hamburger */
         position: relative;
     }
 
+    .logo-image {
+        height: 50px; /* Leggermente più piccolo su mobile */
+    }
+
+    .mobile-menu-btn {
+        display: block; /* Visibile SOLO su mobile */
+        margin-right: 20px;
+    }
+
     .nav-links {
-         display: none;
-         margin-left: 0; /* Rimuovi il margine sinistro */
-     }
+        display: none;
+        margin-left: 0;
+    }
 
-   .mobile-menu-btn {
-       display: none; /* Nascosto di default */
-       cursor: pointer;
-       font-size: 24px;
-       color: var(--text-color);
-   }
+    .mobile-menu-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%);
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--primary-color);
+        z-index: 100;
+        gap: 20px;
+    }
 
-   @media (max-width: 768px) {
-       .mobile-menu-btn {
-           display: block; /* Visibile su mobile */
-           margin-right: 20px;
-       }
-   }
-
-
- .mobile-menu-open .nav-links {
-         display: flex; /* Visibile quando il menu è aperto */
-         flex-direction: column;
-         position: absolute;
-         top: 70px; /* Altezza dell'header */
-         left: 0;
-         right: 0;
-         background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%);
-         padding: 20px;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-         backdrop-filter: blur(10px);
-         border-bottom: 1px solid var(--primary-color);
-         z-index: 100;
-         gap: 20px; /* Spazio tra i link */
-     }
- }
+    .hero-section {
+        background-size: contain; /* Su mobile usiamo contain per evitare tagli */
+        aspect-ratio: auto; /* Rimuoviamo l'aspect ratio forzato */
+        height: auto; /* Altezza automatica */
+        padding-top: 52%; /* Valore percentuale basato sul rapporto dell'immagine - da regolare */
+    }
 
     .hero-content h1 {
         font-size: 28px;
@@ -1634,12 +1666,11 @@ footer::before {
 
 @media (max-width: 480px) {
     .logo-image {
-        height: 70px;
-        top: -5px;
+        height: 45px;
     }
 
     .hero-section {
-        padding: 120px 0;
+        padding: 100px 0; /* Ulteriormente ridotto su schermi molto piccoli */
     }
 
     .hero-content h1 {
@@ -1681,6 +1712,14 @@ footer::before {
         font-size: 20px;
     }
 
+    .whatsapp-button {
+        bottom: 70px; /* Regola la posizione su schermi piccoli */
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+
     .service-card,
     .testimonial-card,
     .pricing-card,
@@ -1689,33 +1728,3 @@ footer::before {
     }
 }
 
-/* Additional Modern Effects */
-.glow-text {
-    text-shadow: 0 0 5px var(--glow-color);
-}
-
-.shimmer {
-    background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.2) 50%,
-        transparent 100%);
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-}
-
-.floating {
-    animation: float 4s ease-in-out infinite;
-}
-
-.pulsing {
-    animation: pulse 3s ease-in-out infinite;
-}
-
-/* Glass Morphism Effect */
-.glass-effect {
-    background: rgba(26, 9, 51, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(138, 43, 226, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
