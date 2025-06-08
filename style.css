@@ -569,12 +569,12 @@ img.logo-image,
 }
 
 .featured {
-    padding-top: 60px
     border: 2px solid var(--primary-color);
     transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--glow-color);
     z-index: 2;
     animation: borderPulse 3s infinite, reveal 0.8s forwards 0.3s;
+    padding-top: 50px !important; /* Padding aumentato per fare spazio al badge */
 }
 
 .featured:hover {
@@ -588,25 +588,29 @@ img.logo-image,
     padding: 12px 0;
     font-weight: 700;
     position: absolute;
-    top: 0;
+    top: 0; /* Al bordo superiore */
     left: 0;
     right: 0;
     border-radius: 13px 13px 0 0;
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
-/* Versione mobile */
 @media (max-width: 768px) {
     .featured-tag {
-        top: 0 !important; /* Rimettere il badge in cima invece di a 25px */
+        top: 0 !important; /* Assicurarsi che sia al bordo superiore */
+        padding: 10px 0 !important; /* Ridotto leggermente il padding per adattarsi meglio */
     }
-    
+
     .featured {
-        padding-top: 60px !important; /* Mantenere il padding per fare spazio al badge */
+        padding-top: 45px !important; /* Adattato per il mobile */
+    }
+  /* Regolazione per il titolo del pacchetto */
+    .featured .package-title {
+        margin-top: 0 !important; /* Ridotto il margine superiore */
     }
 }
-
 .package-title {
     font-size: 26px;
     margin-bottom: 15px;
