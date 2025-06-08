@@ -195,7 +195,7 @@
             border: 1px solid rgba(138, 43, 226, 0.3);
             transition: all 0.4s;
             position: relative;
-            height: 600px; /* Altezza fissa per le immagini degli screenshot */
+            height: 500px; /* Ridotta altezza per gli screenshot */
         }
 
         .gallery-item img {
@@ -231,6 +231,149 @@
             transform: translateY(0);
         }
 
+        /* Nuovi stili per la sezione app */
+        .app-selector {
+            margin: 50px 0 30px;
+            background: linear-gradient(145deg, #1a0933 0%, #2c1356 100%);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-selector::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+            z-index: 0;
+        }
+
+        .app-selector-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-selector-title span {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* Stile migliorato per i loghi delle app */
+        .app-logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-logo-item {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            transition: all 0.4s;
+            cursor: pointer;
+            background: linear-gradient(145deg, #1a0933 0%, #2c1356 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .app-logo-item.active {
+            border-color: var(--accent-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--glow-color);
+            transform: translateY(-10px);
+        }
+
+        .app-logo-item::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid var(--accent-color);
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .app-logo-item.active::after {
+            bottom: -15px;
+            opacity: 1;
+        }
+
+        .app-logo-item img {
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.5s;
+        }
+
+        .app-logo-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--glow-color);
+            border-color: var(--primary-color);
+        }
+
+        .app-logo-item.active:hover {
+            border-color: var(--accent-color);
+        }
+
+        .app-logo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .app-logo-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: linear-gradient(to top, rgba(26, 9, 51, 0.9), transparent);
+            color: var(--text-color);
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+
+        .app-logo-item:hover .app-logo-name {
+            transform: translateY(0);
+        }
+
+        .app-description {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 10px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .project-details-grid {
@@ -239,7 +382,7 @@
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(2, 1fr); /* 2 colonne su tablet */
             }
         }
 
@@ -258,17 +401,31 @@
             }
 
             .gallery-item {
-                height: 500px;
+                height: 450px; /* Ridotta su tablet */
+            }
+
+            .app-logo-item {
+                width: 150px;
+                height: 150px;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .gallery-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* 1 colonna su mobile piccolo */
             }
 
             .gallery-item {
-                height: 450px;
+                height: 400px; /* Ancora più ridotta su mobile */
+            }
+
+            .app-logos {
+                gap: 20px;
+            }
+
+            .app-logo-item {
+                width: 130px;
+                height: 130px;
             }
         }
     </style>
@@ -330,6 +487,27 @@
 
             <div class="project-image">
                 <img id="projectMainImage" src="" alt="Project Preview" style="width: 100%; border-radius: 15px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); border: 1px solid rgba(138, 43, 226, 0.3);">
+            </div>
+        </div>
+
+        <!-- App Selector Section - Nuova sezione per selezionare le app -->
+        <div class="app-selector" id="appSelector" style="display: none;">
+            <div class="app-selector-title">Seleziona un'app per visualizzare gli <span>screenshot specifici</span></div>
+
+            <!-- Sezione loghi delle app -->
+            <div class="app-logos" id="appLogos">
+                <div class="app-logo-item active" data-app="bodyrecomp">
+                    <img src="images/bodyrecomp_logo.png" alt="BodyRecomp">
+                    <div class="app-logo-name">BodyRecomp</div>
+                </div>
+                <div class="app-logo-item" data-app="revolution">
+                    <img src="images/revolution_logo.png" alt="Revolution Team">
+                    <div class="app-logo-name">Revolution Team</div>
+                </div>
+            </div>
+
+            <div class="app-description" id="appDescription">
+                Visualizzando gli screenshot dell'app BodyRecomp
             </div>
         </div>
 
@@ -518,16 +696,54 @@
             }
         };
 
+        // Configurazione degli screenshot delle app
+        const appScreenshots = {
+            'bodyrecomp': [
+                {
+                    image: 'images/screenshots/bodyrecomp/screen1.jpg',
+                    title: 'Home BodyRecomp',
+                    description: 'Schermata principale dell\'app BodyRecomp con statistiche e progressi.'
+                },
+                {
+                    image: 'images/screenshots/bodyrecomp/screen2.jpg',
+                    title: 'Allenamento BodyRecomp',
+                    description: 'Visualizzazione degli esercizi e delle routine di allenamento.'
+                },
+                {
+                    image: 'images/screenshots/bodyrecomp/screen3.jpg',
+                    title: 'Nutrizione BodyRecomp',
+                    description: 'Monitoraggio dell\'alimentazione e dei macronutrienti.'
+                }
+            ],
+            'revolution': [
+                {
+                    image: 'images/screenshots/revolution/screen1.jpg',
+                    title: 'Home Revolution Team',
+                    description: 'Dashboard principale dell\'app Revolution Team con notifiche.'
+                },
+                {
+                    image: 'images/screenshots/revolution/screen2.jpg',
+                    title: 'Allenamenti Revolution',
+                    description: 'Programmi di allenamento personalizzati e monitoraggio.'
+                },
+                {
+                    image: 'images/screenshots/revolution/screen3.jpg',
+                    title: 'Community Revolution',
+                    description: 'Sezione community per condividere progressi e sfide.'
+                }
+            ]
+        };
+
         // Se c'è un ID progetto, carica i dettagli specifici
         if (projectId && projectsConfig[projectId]) {
-            loadProjectDetails(projectId, projectsConfig);
+            loadProjectDetails(projectId, projectsConfig, appScreenshots);
         } else {
             // Reindirizza alla home se l'ID non esiste
             window.location.href = 'index.html';
         }
 
         // Funzione per caricare i dettagli del progetto
-        function loadProjectDetails(id, config) {
+        function loadProjectDetails(id, config, appScreenshots) {
             const projectData = config[id];
 
             // Imposta il titolo della pagina
@@ -560,10 +776,61 @@
                 techElement.appendChild(span);
             });
 
-            // Aggiorna la galleria
+            // Riferimento alla galleria principale
             const galleryElement = document.getElementById('galleryGrid');
+            const galleryTitle = document.querySelector('.gallery-title');
+
+            // Aggiorna la galleria con gli screenshot del progetto (che sono quelli di BodyRecomp)
+            updateGallery(galleryElement, projectData.gallery);
+
+            // Mostra solo il selettore delle app se siamo nella pagina "mobile"
+            if (id === 'mobile') {
+                document.getElementById('appSelector').style.display = 'block';
+
+                // Imposta BodyRecomp come app attiva di default
+                const bodyrecompLogo = document.querySelector('.app-logo-item[data-app="bodyrecomp"]');
+                bodyrecompLogo.classList.add('active');
+
+                // Gli screenshot di default sono già quelli di BodyRecomp (che sono gli stessi del progetto mobile)
+
+                // Aggiungi event listener per i loghi delle app
+                const appLogoItems = document.querySelectorAll('.app-logo-item');
+                const appDescription = document.getElementById('appDescription');
+
+                appLogoItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const app = this.getAttribute('data-app');
+
+                        // Rimuovi la classe active da tutti i loghi
+                        appLogoItems.forEach(logo => {
+                            logo.classList.remove('active');
+                        });
+
+                                            // Aggiungi la classe active al logo cliccato
+                        this.classList.add('active');
+
+                        // Cambia gli screenshot solo se si seleziona Revolution
+                        if (app === 'revolution') {
+                            updateGallery(galleryElement, appScreenshots[app]);
+                            appDescription.textContent = 'Visualizzando gli screenshot dell\'app Revolution Team';
+                        } else {
+                            // Per BodyRecomp, usa gli screenshot originali del progetto
+                            updateGallery(galleryElement, projectData.gallery);
+                            appDescription.textContent = 'Visualizzando gli screenshot dell\'app BodyRecomp';
+                        }
+                    });
+                });
+            } else {
+                // Nascondi la sezione dei loghi delle app se non siamo nella pagina "mobile"
+                document.getElementById('appSelector').style.display = 'none';
+            }
+        }
+
+        // Funzione per aggiornare la galleria
+        function updateGallery(galleryElement, items) {
             galleryElement.innerHTML = '';
-            projectData.gallery.forEach(item => {
+
+            items.forEach(item => {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
 
@@ -593,3 +860,5 @@
 </script>
 </body>
 </html>
+
+
