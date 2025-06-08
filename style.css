@@ -569,6 +569,7 @@ img.logo-image,
 }
 
 .featured {
+    padding-top: 60px
     border: 2px solid var(--primary-color);
     transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--glow-color);
@@ -587,7 +588,7 @@ img.logo-image,
     padding: 12px 0;
     font-weight: 700;
     position: absolute;
-    top: 25px;
+    top: 0;
     left: 0;
     right: 0;
     border-radius: 13px 13px 0 0;
@@ -598,13 +599,14 @@ img.logo-image,
 /* Versione mobile */
 @media (max-width: 768px) {
     .featured-tag {
-        top: 25px !important;
+        top: 0 !important; /* Rimettere il badge in cima invece di a 25px */
     }
-
+    
     .featured {
-        padding-top: 65px !important;
+        padding-top: 60px !important; /* Mantenere il padding per fare spazio al badge */
     }
 }
+
 .package-title {
     font-size: 26px;
     margin-bottom: 15px;
