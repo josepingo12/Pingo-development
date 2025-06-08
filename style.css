@@ -1565,26 +1565,28 @@ footer::before {
      }
 
     .mobile-menu-btn {
-         display: block; /* Mostra in mobile */
-         margin-right: 20px; /* Spazio a destra */
-     }
+        display: none; /* Nascosto su desktop */
+        cursor: pointer;
+        font-size: 24px;
+        color: var(--text-color);
+    }
 
-   .mobile-menu-open .nav-links {
-          display: flex;
-          flex-direction: column;
-          position: absolute;
-          top: 70px; /* Altezza dell'header */
-          left: 0;
-          right: 0;
-          background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%);
-          padding: 20px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(10px);
-          border-bottom: 1px solid var(--primary-color);
-          z-index: 100;
-          gap: 20px; /* Spazio tra i link */
-      }
-  }
+ .mobile-menu-open .nav-links {
+         display: flex; /* Visibile quando il menu è aperto */
+         flex-direction: column;
+         position: absolute;
+         top: 70px; /* Altezza dell'header */
+         left: 0;
+         right: 0;
+         background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%);
+         padding: 20px;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+         backdrop-filter: blur(10px);
+         border-bottom: 1px solid var(--primary-color);
+         z-index: 100;
+         gap: 20px; /* Spazio tra i link */
+     }
+ }
 
     .hero-content h1 {
         font-size: 28px;
