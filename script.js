@@ -5,9 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-links a');
 
     // Toggle menu mobile
-    mobileMenuBtn.addEventListener('click', function() {
-        navContainer.classList.toggle('mobile-menu-open');
-    });
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            console.log('Menu button clicked'); // Per debug
+            navContainer.classList.toggle('mobile-menu-open');
+        });
+    }
 
     // Chiudi il menu quando si fa clic su un link
     navLinks.forEach(link => {
@@ -25,8 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navContainer.classList.remove('mobile-menu-open');
         }
     });
-});
-
 
     // Portfolio filter
     const filterBtns = document.querySelectorAll('.filter-btn');
