@@ -15,6 +15,9 @@
    <!-- Header modificato: solo link di navigazione -->
    <header>
        <div class="container nav-container">
+           <div class="mobile-menu-btn">
+               <i class="fas fa-bars"></i>
+           </div>
            <nav class="nav-links">
                <a href="#" class="active">Home</a>
                <a href="#services">Servizi</a>
@@ -22,9 +25,6 @@
                <a href="#portfolio">Portfolio</a>
                <a href="#contact">Contatti</a>
            </nav>
-           <div class="mobile-menu-btn">
-               <i class="fas fa-bars"></i>
-           </div>
        </div>
    </header>
 
@@ -229,35 +229,40 @@
             <button class="filter-btn" data-filter="web">Web</button>
             <button class="filter-btn" data-filter="mobile">Mobile</button>
         </div>
-        
+
         <div class="portfolio-grid">
+            <!-- Primo elemento: App Web -->
             <div class="portfolio-item" data-category="web">
                 <img src="images/app_web.png" alt="App Web">
                 <div class="portfolio-overlay">
                     <h3>App Web</h3>
                     <p>Applicazione Web Responsive</p>
-                    <a href="#" class="portfolio-link">Vedi Dettagli</a>
+                    <a href="project-details.html?id=web" class="portfolio-link">Vedi Dettagli</a>
                 </div>
             </div>
-            
+
+            <!-- Secondo elemento: App Mobile -->
             <div class="portfolio-item" data-category="mobile">
                 <img src="images/ios_android.png" alt="App Mobile">
                 <div class="portfolio-overlay">
                     <h3>App Mobile</h3>
                     <p>iOS & Android</p>
-                    <a href="#" class="portfolio-link">Vedi Dettagli</a>
+                    <a href="project-details.html?id=mobile" class="portfolio-link">Vedi Dettagli</a>
                 </div>
             </div>
-            
+
+            <!-- Terzo elemento: Sito Web -->
             <div class="portfolio-item" data-category="web">
                 <img src="images/sito_web.png" alt="Sito Web">
                 <div class="portfolio-overlay">
                     <h3>Sito Web</h3>
                     <p>Pagina Web Aziendale</p>
-                    <a href="#" class="portfolio-link">Vedi Dettagli</a>
+                    <a href="project-details.html?id=website" class="portfolio-link">Vedi Dettagli</a>
                 </div>
             </div>
         </div>
+
+
     </div>
 </section>
 
