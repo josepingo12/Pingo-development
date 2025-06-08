@@ -1717,20 +1717,26 @@ footer::before {
     }
 }
 
-/@media (max-width: 768px) {
-     /* Forza logo più grande su mobile con selettori specifici */
-     body header .logo,
-     header .logo,
-     .nav-container .logo {
-         display: flex !important;
-         align-items: center !important;
-         justify-content: flex-start !important; /* Cambiato da center a flex-start */
-         margin-left: 10px !important; /* Aggiunto margine a sinistra */
-         margin-top: 0 !important;
-         position: relative !important;
-         z-index: 1000 !important;
-         width: auto !important; /* Cambiato da 100% a auto */
-     }
+/* Regole specifiche per il mobile */
+@media (max-width: 768px) {
+    /* Nascondi la barra di navigazione su mobile */
+    .nav-links {
+        display: none !important; /* Forza la proprietà display: none */
+    }
+
+    /* Forza logo più grande su mobile e posizionato a sinistra */
+    body header .logo,
+    header .logo,
+    .nav-container .logo {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important; /* Allineamento a sinistra */
+        margin-left: 15px !important; /* Margine a sinistra */
+        margin-top: 0 !important;
+        position: relative !important;
+        z-index: 1000 !important;
+        width: auto !important; /* Larghezza automatica, non 100% */
+    }
 
     body header .logo img.logo-image,
     header .logo img.logo-image,
@@ -1741,14 +1747,14 @@ footer::before {
     body .logo-image,
     header .logo-image,
     .logo-image {
-        height: 150px !important;
-        min-height: 150px !important;
+        height: 100px !important; /* Altezza ridotta */
+        min-height: 100px !important;
         width: auto !important;
         max-width: none !important;
-        min-width: 150px !important;
+        min-width: 100px !important;
         object-fit: contain !important;
-        transform: scale(1.3) !important;
-        margin: 0 auto !important;
+        transform: scale(1.2) !important;
+        margin: 0 !important; /* Rimuovi margine automatico */
     }
 
     /* Posiziona il menu hamburger correttamente a destra */
@@ -1763,30 +1769,28 @@ footer::before {
     }
 
     .nav-container {
-        justify-content: space-between; /* Spazio tra logo e menu hamburger */
-        padding: 0 15px;
+        justify-content: space-between !important; /* Forza spazio tra logo e menu hamburger */
+        padding: 0 15px !important;
     }
 
-    .nav-links {
-        display: none;
-        margin-left: 0;
-    }
-
+    /* Stile per il menu mobile quando aperto */
     .mobile-menu-open .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%);
-        padding: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--primary-color);
-        z-index: 100;
-        gap: 20px;
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 80px !important; /* Aumentato per dare spazio al logo */
+        left: 0 !important;
+        right: 0 !important;
+        background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%) !important;
+        padding: 20px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        backdrop-filter: blur(10px) !important;
+        border-bottom: 1px solid var(--primary-color) !important;
+        z-index: 100 !important;
+        gap: 20px !important;
     }
+}
+
 
     /* Ottimizzazione della visualizzazione del banner su mobile */
     .hero-section {
