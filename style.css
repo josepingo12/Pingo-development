@@ -587,7 +587,7 @@ img.logo-image,
     padding: 12px 0;
     font-weight: 700;
     position: absolute;
-    top: 0;
+    top: 25px;
     left: 0;
     right: 0;
     border-radius: 13px 13px 0 0;
@@ -595,7 +595,16 @@ img.logo-image,
     letter-spacing: 1px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+/* Versione mobile */
+@media (max-width: 768px) {
+    .featured-tag {
+        top: 25px !important;
+    }
 
+    .featured {
+        padding-top: 65px !important;
+    }
+}
 .package-title {
     font-size: 26px;
     margin-bottom: 15px;
