@@ -124,7 +124,7 @@ header {
     align-items: center;
     justify-content: center; /* Aggiunto per centratura orizzontale */
     margin-left: -145px; /* Aggiunge spazio a sinistra */
-     margin-top: 15px;
+    margin-top: 15px;
 }
 
 .logo img.logo-image,
@@ -1582,22 +1582,23 @@ footer::before {
 
 @media (max-width: 768px) {
     header {
-        height: auto;
-        padding: 15px 0;
+        height: 60px; /* Altezza ridotta per mobile */
+    }
+
+    /* Nascondi completamente il logo su mobile */
+    .logo {
+        display: none !important;
     }
 
     .nav-container {
-        justify-content: space-between; /* Spazio tra logo e menu hamburger */
-        position: relative;
-    }
-
-    .logo-image {
-        height: 50px; /* Leggermente più piccolo su mobile */
+        justify-content: flex-end; /* Sposta il menu hamburger a destra */
+        padding: 0 15px;
     }
 
     .mobile-menu-btn {
         display: block; /* Visibile SOLO su mobile */
-        margin-right: 20px;
+        margin-right: 0; /* Nessun margine a destra per allinearlo */
+        font-size: 28px; /* Più grande per una migliore usabilità */
     }
 
     .nav-links {
@@ -1609,7 +1610,7 @@ footer::before {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         right: 0;
         background: linear-gradient(135deg, rgba(26, 9, 51, 0.95) 0%, rgba(44, 19, 86, 0.95) 100%);
@@ -1621,11 +1622,16 @@ footer::before {
         gap: 20px;
     }
 
+    /* Ottimizzazione della visualizzazione del banner su mobile */
     .hero-section {
-        background-size: contain; /* Su mobile usiamo contain per evitare tagli */
+        background-size: cover; /* Cambiato da contain a cover per riempire meglio */
         aspect-ratio: auto; /* Rimuoviamo l'aspect ratio forzato */
-        height: auto; /* Altezza automatica */
-        padding-top: 52%; /* Valore percentuale basato sul rapporto dell'immagine - da regolare */
+        height: 250px; /* Altezza fissa invece di padding-top */
+        padding-top: 0; /* Rimuovi padding-top */
+    }
+
+    .hero-section::after {
+        height: 60px; /* Sfumatura più sottile su mobile */
     }
 
     .hero-content h1 {
@@ -1665,16 +1671,8 @@ footer::before {
 }
 
 @media (max-width: 480px) {
-    .logo-image {
-        height: 45px;
-    }
-
     .hero-section {
-        padding: 100px 0; /* Ulteriormente ridotto su schermi molto piccoli */
-    }
-
-    .hero-content h1 {
-        font-size: 24px;
+        height: 200px; /* Ancora più piccolo per dispositivi molto piccoli */
     }
 
     .pricing-card {
