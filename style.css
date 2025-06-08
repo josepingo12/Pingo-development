@@ -1564,12 +1564,20 @@ footer::before {
          margin-left: 0; /* Rimuovi il margine sinistro */
      }
 
-    .mobile-menu-btn {
-        display: none; /* Nascosto su desktop */
-        cursor: pointer;
-        font-size: 24px;
-        color: var(--text-color);
-    }
+   .mobile-menu-btn {
+       display: none; /* Nascosto di default */
+       cursor: pointer;
+       font-size: 24px;
+       color: var(--text-color);
+   }
+
+   @media (max-width: 768px) {
+       .mobile-menu-btn {
+           display: block; /* Visibile su mobile */
+           margin-right: 20px;
+       }
+   }
+
 
  .mobile-menu-open .nav-links {
          display: flex; /* Visibile quando il menu è aperto */
