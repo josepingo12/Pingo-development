@@ -1584,36 +1584,25 @@ footer::before {
     header {
         height: 60px; /* Altezza ridotta per mobile */
     }
-@media (max-width: 768px) {
-    /* Nascondi completamente il logo su mobile con selettori multipli e !important */
-    .logo, 
-    header .logo, 
-    .nav-container .logo, 
-    div.logo, 
-    a.logo {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        width: 0 !important;
-        height: 0 !important;
-        position: absolute !important;
-        overflow: hidden !important;
-        clip: rect(0, 0, 0, 0) !important;
-        margin: -1px !important;
-        padding: 0 !important;
-        border: 0 !important;
+    
+    /* Logo più piccolo e visibile a sinistra su mobile */
+    .logo {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin-left: 15px !important;
+        margin-top: 0 !important;
     }
-* Nascondi anche l'immagine del logo direttamente */
-    .logo-image,
+    
+    .logo img.logo-image,
     img.logo-image,
-    .logo img,
-    header img,
-    .nav-container img {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        width: 0 !important;
-        height: 0 !important;
+    .logo-image {
+        height: 45px !important;
+        width: auto !important;
+        max-width: none !important;
+        min-height: auto !important;
+        object-fit: contain !important;
+        transform: scale(1) !important; /* Rimuove l'ingrandimento extra */
     }
     
     /* Posiziona il menu hamburger correttamente a destra */
@@ -1626,15 +1615,10 @@ footer::before {
         font-size: 28px !important;
         z-index: 101 !important;
     }
+    
     .nav-container {
-        justify-content: flex-end; /* Sposta il menu hamburger a destra */
+        justify-content: space-between; /* Spazio tra logo e menu hamburger */
         padding: 0 15px;
-    }
-
-    .mobile-menu-btn {
-        display: block; /* Visibile SOLO su mobile */
-        margin-right: 0; /* Nessun margine a destra per allinearlo */
-        font-size: 28px; /* Più grande per una migliore usabilità */
     }
 
     .nav-links {
@@ -1660,10 +1644,10 @@ footer::before {
 
     /* Ottimizzazione della visualizzazione del banner su mobile */
     .hero-section {
-        background-size: cover; /* Cambiato da contain a cover per riempire meglio */
-        aspect-ratio: auto; /* Rimuoviamo l'aspect ratio forzato */
-        height: 250px; /* Altezza fissa invece di padding-top */
-        padding-top: 0; /* Rimuovi padding-top */
+        background-size: cover !important; /* Cambiato da contain a cover per riempire meglio */
+        aspect-ratio: auto !important; /* Rimuoviamo l'aspect ratio forzato */
+        height: 250px !important; /* Altezza fissa invece di padding-top */
+        padding-top: 0 !important; /* Rimuovi padding-top */
     }
 
     .hero-section::after {
@@ -1709,6 +1693,12 @@ footer::before {
 @media (max-width: 480px) {
     .hero-section {
         height: 200px; /* Ancora più piccolo per dispositivi molto piccoli */
+    }
+    
+    .logo img.logo-image,
+    img.logo-image,
+    .logo-image {
+        height: 40px !important;
     }
 
     .pricing-card {
@@ -1761,4 +1751,3 @@ footer::before {
         transform: none !important;
     }
 }
-
