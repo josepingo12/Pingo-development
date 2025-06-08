@@ -1584,7 +1584,7 @@ footer::before {
     header {
         height: 60px; /* Altezza ridotta per mobile */
     }
-    
+
     /* Logo più piccolo e visibile a sinistra su mobile */
     .logo {
         display: flex !important;
@@ -1593,18 +1593,18 @@ footer::before {
         margin-left: 15px !important;
         margin-top: 0 !important;
     }
-    
+
     .logo img.logo-image,
     img.logo-image,
     .logo-image {
-        height: 200px !important;
+        height: 150px !important;
         width: auto !important;
         max-width: none !important;
         min-height: auto !important;
         object-fit: contain !important;
-        transform: scale(1) !important; /* Rimuove l'ingrandimento extra */
+        transform: scale(1.5) !important; /* Rimuove l'ingrandimento extra */
     }
-    
+
     /* Posiziona il menu hamburger correttamente a destra */
     .mobile-menu-btn {
         display: block !important;
@@ -1615,7 +1615,7 @@ footer::before {
         font-size: 28px !important;
         z-index: 101 !important;
     }
-    
+
     .nav-container {
         justify-content: space-between; /* Spazio tra logo e menu hamburger */
         padding: 0 15px;
@@ -1692,9 +1692,9 @@ footer::before {
 
 @media (max-width: 480px) {
     .hero-section {
-        height: 200px; /* Ancora più piccolo per dispositivi molto piccoli */
+        height: 120px; /* Ancora più piccolo per dispositivi molto piccoli */
     }
-    
+
     .logo img.logo-image,
     img.logo-image,
     .logo-image {
