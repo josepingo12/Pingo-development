@@ -13,26 +13,30 @@
 <body>
    <!-- Header -->
    <!-- Header modificato: solo link di navigazione -->
+   <!-- Header con logo e menu hamburger -->
    <header>
        <div class="container nav-container">
-           <div class="logo">
-               <a href="index.html">
-                   <img src="images/logo.png" alt="Pingo Development" class="logo-image" style="height: 60px !important; max-width: none !important; width: auto !important;">
-               </a>
-           </div>
+           <!-- Logo a sinistra -->
+           <a href="index.html" class="logo">
+               <img src="images/logo.png" alt="Pingo Development" class="logo-image">
+           </a>
 
+           <!-- Menu hamburger a destra -->
            <div class="mobile-menu-btn">
                <i class="fas fa-bars"></i>
            </div>
+
+           <!-- Links di navigazione -->
            <nav class="nav-links">
-               <a href="#" class="active">Home</a>
-               <a href="#services">Servizi</a>
-               <a href="#pricing">Prezzi</a>
-               <a href="#portfolio">Portfolio</a>
-               <a href="#contact">Contatti</a>
+               <a href="index.html">Home</a>
+               <a href="index.html#services">Servizi</a>
+               <a href="index.html#pricing">Prezzi</a>
+               <a href="index.html#portfolio">Portfolio</a>
+               <a href="index.html#contact">Contatti</a>
            </nav>
        </div>
    </header>
+
 
 
    <!-- Hero Section senza testo e pulsanti -->
@@ -99,55 +103,71 @@
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process-section">
-        <div class="container">
-            <h2 class="section-title">IL NOSTRO PROCESSO</h2>
-            <p class="section-subtitle">Come lavoriamo per trasformare la tua idea in realtà</p>
-            
-            <div class="process-container">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Analisi e Pianificazione</h3>
-                        <p>Comprendiamo le tue esigenze e definiamo obiettivi chiari per il tuo progetto digitale.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Design UI/UX</h3>
-                        <p>Creiamo un'interfaccia utente intuitiva e un'esperienza utente coinvolgente e funzionale.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Sviluppo</h3>
-                        <p>Implementiamo il progetto utilizzando le tecnologie più adatte e seguendo le migliori pratiche.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Test e Ottimizzazione</h3>
-                        <p>Testiamo rigorosamente ogni funzionalità e ottimizziamo per garantire prestazioni eccellenti.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Lancio e Supporto</h3>
-                        <p>Pubblichiamo la tua soluzione e forniamo supporto continuo per garantirne il successo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Process Section con immagini -->
+   <section class="process-section">
+       <div class="container">
+           <h2 class="section-title">IL NOSTRO PROCESSO</h2>
+           <p class="section-subtitle">Come lavoriamo per trasformare la tua idea in realtà</p>
+
+           <div class="process-container">
+               <div class="process-step">
+                   <div class="step-number">1</div>
+                   <div class="step-content">
+                       <h3>Analisi e Pianificazione</h3>
+                       <p>Comprendiamo le tue esigenze e definiamo obiettivi chiari per il tuo progetto digitale.</p>
+                   </div>
+                   <div class="step-image">
+                       <img src="images/process/analysis.png" alt="Analisi e Pianificazione">
+                   </div>
+               </div>
+
+               <div class="process-step">
+                   <div class="step-number">2</div>
+                   <div class="step-content">
+                       <h3>Design UI/UX</h3>
+                       <p>Creiamo un'interfaccia utente intuitiva e un'esperienza utente coinvolgente e funzionale.</p>
+                   </div>
+                   <div class="step-image">
+                       <img src="images/process/design.png" alt="Design UI/UX">
+                   </div>
+               </div>
+
+               <div class="process-step">
+                   <div class="step-number">3</div>
+                   <div class="step-content">
+                       <h3>Sviluppo</h3>
+                       <p>Implementiamo il progetto utilizzando le tecnologie più adatte e seguendo le migliori pratiche.</p>
+                   </div>
+                   <div class="step-image">
+                       <img src="images/process/development.png" alt="Sviluppo">
+                   </div>
+               </div>
+
+               <div class="process-step">
+                   <div class="step-number">4</div>
+                   <div class="step-content">
+                       <h3>Test e Ottimizzazione</h3>
+                       <p>Testiamo rigorosamente ogni funzionalità e ottimizziamo per garantire prestazioni eccellenti.</p>
+                   </div>
+                   <div class="step-image">
+                       <img src="images/process/testing.png" alt="Test e Ottimizzazione">
+                   </div>
+               </div>
+
+               <div class="process-step">
+                   <div class="step-number">5</div>
+                   <div class="step-content">
+                       <h3>Lancio e Supporto</h3>
+                       <p>Pubblichiamo la tua soluzione e forniamo supporto continuo per garantirne il successo.</p>
+                   </div>
+                   <div class="step-image">
+                       <img src="images/process/launch.png" alt="Lancio e Supporto">
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">
