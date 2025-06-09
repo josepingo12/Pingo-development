@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navContainer = document.querySelector('.nav-container');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const successModal = document.getElementById('successModal');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModalBtn = document.querySelector('.close-modal');
 
     // Toggle menu mobile
     if (mobileMenuBtn) {
@@ -89,16 +92,77 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Gestione form di contatto
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    // Gestione form di contatto con Web3Forms
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
 
-            // Qui puoi aggiungere il codice per inviare il form
-            // Per ora mostriamo solo un alert
-            alert('Il messaggio è stato inviato con successo!');
-            contactForm.reset();
+            // Disabilita il pulsante durante l'invio
+            const submitBtn = document.getElementById('submitBtn') || form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Invio in corso...';
+            }
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Invia Messaggio';
+                }
+
+                if (response.status == 200) {
+                    // Reset del form
+                    form.reset();
+
+                    // Mostra il modal di successo se esiste
+                    if (successModal && modalOverlay) {
+                        successModal.classList.add('active');
+                        modalOverlay.classList.add('active');
+                    } else {
+                        // Fallback se il modal non esiste
+                        alert('Messaggio inviato con successo!');
+                    }
+                } else {
+                    console.log(response);
+                    alert("Errore: " + json.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Invia Messaggio';
+                }
+                alert("Si è verificato un errore. Riprova più tardi.");
+            });
+        });
+    }
+
+    // Chiusura del modal di successo
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function() {
+            successModal.classList.remove('active');
+            modalOverlay.classList.remove('active');
+        });
+    }
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', function() {
+            successModal.classList.remove('active');
+            modalOverlay.classList.remove('active');
         });
     }
 
@@ -114,6 +178,172 @@ document.addEventListener('DOMContentLoaded', function() {
             newsletterForm.reset();
         });
     }
+
+    // Gestione del carosello testimonianze
+    function initTestimonialsCarousel() {
+        const carousel = document.querySelector('.testimonials-carousel');
+        if (!carousel) return;
+
+        const cards = carousel.querySelectorAll('.testimonial-card');
+        const prevBtn = document.querySelector('.carousel-control.prev');
+        const nextBtn = document.querySelector('.carousel-control.next');
+        const indicatorsContainer = document.querySelector('.carousel-indicators');
+
+        let currentIndex = 0;
+        let cardWidth = 0;
+        let visibleCards = 1;
+
+        // Crea gli indicatori
+        function createIndicators() {
+            indicatorsContainer.innerHTML = '';
+            const totalIndicators = Math.ceil(cards.length / visibleCards);
+
+            for (let i = 0; i < totalIndicators; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                if (i === 0) indicator.classList.add('active');
+
+                indicator.addEventListener('click', () => {
+                    goToSlide(i);
+                });
+
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+
+        // Calcola quante card sono visibili in base alla larghezza dello schermo
+        function updateCarouselLayout() {
+            cardWidth = cards[0].offsetWidth + 30; // Width + gap
+
+            if (window.innerWidth >= 1024) {
+                visibleCards = 3;
+            } else if (window.innerWidth >= 768) {
+                visibleCards = 2;
+            } else {
+                visibleCards = 1;
+            }
+
+            createIndicators();
+            goToSlide(0);
+        }
+
+        // Va a uno slide specifico
+        function goToSlide(index) {
+            const maxIndex = Math.ceil(cards.length / visibleCards) - 1;
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+
+            const offset = -(currentIndex * visibleCards * cardWidth);
+            carousel.style.transform = `translateX(${offset}px)`;
+
+            // Aggiorna gli indicatori
+            const indicators = indicatorsContainer.querySelectorAll('.indicator');
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        // Inizializzazione
+        window.addEventListener('resize', updateCarouselLayout);
+        updateCarouselLayout();
+
+        // Event listeners per i pulsanti
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                goToSlide(currentIndex - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                goToSlide(currentIndex + 1);
+            });
+        }
+
+        // Gestione swipe per mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carousel.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const threshold = 50;
+            if (touchStartX - touchEndX > threshold) {
+                // Swipe left
+                goToSlide(currentIndex + 1);
+            } else if (touchEndX - touchStartX > threshold) {
+                // Swipe right
+                goToSlide(currentIndex - 1);
+            }
+        }
+    }
+
+    // Gestione del form di recensione
+    function initReviewForm() {
+        const reviewForm = document.getElementById('reviewForm');
+        if (!reviewForm) return;
+
+        reviewForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(reviewForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            // Disabilita il pulsante durante l'invio
+            const submitBtn = document.getElementById('reviewSubmitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Invio in corso...';
+            }
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Invia Recensione';
+                }
+
+                if (response.status == 200) {
+                    // Reset del form
+                    reviewForm.reset();
+
+                    // Mostra un messaggio di successo
+                    alert('Grazie per la tua recensione! Sarà pubblicata dopo essere stata approvata.');
+                } else {
+                    console.log(response);
+                    alert("Errore: " + json.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Invia Recensione';
+                }
+                alert("Si è verificato un errore. Riprova più tardi.");
+            });
+        });
+    }
+
+    // Inizializza il carosello testimonianze
+    initTestimonialsCarousel();
+
+    // Inizializza il form di recensione
+    initReviewForm();
 
     // Inizializza l'animazione al caricamento della pagina
     animateOnScroll();
