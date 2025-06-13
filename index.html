@@ -11,248 +11,252 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-   <!-- Header -->
-   <!-- Header modificato: solo link di navigazione -->
-   <!-- Header con logo e menu hamburger -->
-   <header>
-       <div class="container nav-container">
-           <!-- Logo a sinistra -->
-           <a href="index.html" class="logo">
-               <img src="images/logo.png" alt="Pingo Development" class="logo-image">
-           </a>
+<!-- Header -->
+<!-- Header modificato: solo link di navigazione -->
+<!-- Header con logo e menu hamburger -->
+<header>
+    <div class="container nav-container">
+        <!-- Logo a sinistra -->
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Pingo Development" class="logo-image">
+        </a>
 
-           <!-- Menu hamburger a destra -->
-           <div class="mobile-menu-btn">
-               <i class="fas fa-bars"></i>
-           </div>
+        <!-- Menu hamburger a destra -->
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
 
-           <!-- Links di navigazione -->
-           <nav class="nav-links">
-               <a href="index.html">Home</a>
-               <a href="index.html#services">Servizi</a>
-               <a href="index.html#pricing">Prezzi</a>
-               <a href="index.html#portfolio">Portfolio</a>
-               <a href="index.html#contact">Contatti</a>
-           </nav>
-       </div>
-   </header>
+        <!-- Links di navigazione -->
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Servizi</a>
+            <a href="index.html#pricing">Prezzi</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#contact">Contatti</a>
+        </nav>
+    </div>
+</header>
 
 
 
-   <!-- Hero Section senza testo e pulsanti -->
-   <section class="hero-section">
-       <!-- Nessun contenuto qui, solo lo sfondo dell'immagine banner -->
-   </section>
+<!-- Hero Section con video di sfondo -->
+<section class="hero-section">
+    <video autoplay muted loop id="hero-video">
+        <source src="images/video_header.mp4" type="video/mp4">
+        Il tuo browser non supporta i video HTML5.
+    </video>
+    <!-- Puoi aggiungere altri elementi qui se necessario -->
+</section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title">I NOSTRI SERVIZI</h2>
-            <p class="section-subtitle">Soluzioni digitali personalizzate per ogni esigenza</p>
-            
-            <div class="services-container">
-                <!-- iOS App Development Card -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fab fa-apple"></i>
-                    </div>
-                    <h3>iOS App Development</h3>
-                    <p>Sviluppiamo applicazioni native per iPhone e iPad con un'esperienza utente impeccabile e prestazioni ottimizzate.</p>
-                    <ul class="service-features">
-                        <li>Design UI/UX nativo</li>
-                        <li>Integrazione con Apple Services</li>
-                        <li>Ottimizzazione performance</li>
-                        <li>Pubblicazione su App Store</li>
-                    </ul>
-                    <a href="#contact" class="service-link">Maggiori informazioni</a>
+<!-- Services Section -->
+<section id="services" class="services-section">
+    <div class="container">
+        <h2 class="section-title">I NOSTRI SERVIZI</h2>
+        <p class="section-subtitle">Soluzioni digitali personalizzate per ogni esigenza</p>
+
+        <div class="services-container">
+            <!-- iOS App Development Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fab fa-apple"></i>
                 </div>
-                
-                <!-- Android App Development Card -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fab fa-android"></i>
-                    </div>
-                    <h3>Android App Development</h3>
-                    <p>Creiamo applicazioni Android performanti e scalabili per raggiungere una vasta gamma di dispositivi e utenti.</p>
-                    <ul class="service-features">
-                        <li>Material Design</li>
-                        <li>Compatibilità multi-dispositivo</li>
-                        <li>Integrazione API Google</li>
-                        <li>Pubblicazione su Play Store</li>
-                    </ul>
-                    <a href="#contact" class="service-link">Maggiori informazioni</a>
-                </div>
-                
-                <!-- Web Development Card -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                <h3>iOS App Development</h3>
+                <p>Sviluppiamo applicazioni native per iPhone e iPad con un'esperienza utente impeccabile e prestazioni ottimizzate.</p>
+                <ul class="service-features">
+                    <li>Design UI/UX nativo</li>
+                    <li>Integrazione con Apple Services</li>
+                    <li>Ottimizzazione performance</li>
+                    <li>Pubblicazione su App Store</li>
+                </ul>
+                <a href="#contact" class="service-link">Maggiori informazioni</a>
+            </div>
 
-                    <h3>Web Development</h3>
-                    <p>Realizziamo siti web e applicazioni web responsive, veloci e ottimizzati per i motori di ricerca.</p>
-                    <ul class="service-features">
-                        <li>Design responsive</li>
-                        <li>Frontend moderno</li>
-                        <li>Backend scalabile</li>
-                        <li>SEO ottimizzato</li>
-                    </ul>
-                    <a href="#contact" class="service-link">Maggiori informazioni</a>
+            <!-- Android App Development Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fab fa-android"></i>
+                </div>
+                <h3>Android App Development</h3>
+                <p>Creiamo applicazioni Android performanti e scalabili per raggiungere una vasta gamma di dispositivi e utenti.</p>
+                <ul class="service-features">
+                    <li>Material Design</li>
+                    <li>Compatibilità multi-dispositivo</li>
+                    <li>Integrazione API Google</li>
+                    <li>Pubblicazione su Play Store</li>
+                </ul>
+                <a href="#contact" class="service-link">Maggiori informazioni</a>
+            </div>
+
+            <!-- Web Development Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+
+                <h3>Web Development</h3>
+                <p>Realizziamo siti web e applicazioni web responsive, veloci e ottimizzati per i motori di ricerca.</p>
+                <ul class="service-features">
+                    <li>Design responsive</li>
+                    <li>Frontend moderno</li>
+                    <li>Backend scalabile</li>
+                    <li>SEO ottimizzato</li>
+                </ul>
+                <a href="#contact" class="service-link">Maggiori informazioni</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section con immagini -->
+<section class="process-section">
+    <div class="container">
+        <h2 class="section-title">IL NOSTRO PROCESSO</h2>
+        <p class="section-subtitle">Come lavoriamo per trasformare la tua idea in realtà</p>
+
+        <div class="process-container">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Analisi e Pianificazione</h3>
+                    <p>Comprendiamo le tue esigenze e definiamo obiettivi chiari per il tuo progetto digitale.</p>
+                </div>
+                <div class="step-image">
+                    <img src="images/process/analysis.png" alt="Analisi e Pianificazione">
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Design UI/UX</h3>
+                    <p>Creiamo un'interfaccia utente intuitiva e un'esperienza utente coinvolgente e funzionale.</p>
+                </div>
+                <div class="step-image">
+                    <img src="images/process/design.png" alt="Design UI/UX">
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Sviluppo</h3>
+                    <p>Implementiamo il progetto utilizzando le tecnologie più adatte e seguendo le migliori pratiche.</p>
+                </div>
+                <div class="step-image">
+                    <img src="images/process/development.png" alt="Sviluppo">
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Test e Ottimizzazione</h3>
+                    <p>Testiamo rigorosamente ogni funzionalità e ottimizziamo per garantire prestazioni eccellenti.</p>
+                </div>
+                <div class="step-image">
+                    <img src="images/process/testing.png" alt="Test e Ottimizzazione">
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Lancio e Supporto</h3>
+                    <p>Pubblichiamo la tua soluzione e forniamo supporto continuo per garantirne il successo.</p>
+                </div>
+                <div class="step-image">
+                    <img src="images/process/launch.png" alt="Lancio e Supporto">
                 </div>
             </div>
         </div>
-    </section>
-
-   <!-- Process Section con immagini -->
-   <section class="process-section">
-       <div class="container">
-           <h2 class="section-title">IL NOSTRO PROCESSO</h2>
-           <p class="section-subtitle">Come lavoriamo per trasformare la tua idea in realtà</p>
-
-           <div class="process-container">
-               <div class="process-step">
-                   <div class="step-number">1</div>
-                   <div class="step-content">
-                       <h3>Analisi e Pianificazione</h3>
-                       <p>Comprendiamo le tue esigenze e definiamo obiettivi chiari per il tuo progetto digitale.</p>
-                   </div>
-                   <div class="step-image">
-                       <img src="images/process/analysis.png" alt="Analisi e Pianificazione">
-                   </div>
-               </div>
-
-               <div class="process-step">
-                   <div class="step-number">2</div>
-                   <div class="step-content">
-                       <h3>Design UI/UX</h3>
-                       <p>Creiamo un'interfaccia utente intuitiva e un'esperienza utente coinvolgente e funzionale.</p>
-                   </div>
-                   <div class="step-image">
-                       <img src="images/process/design.png" alt="Design UI/UX">
-                   </div>
-               </div>
-
-               <div class="process-step">
-                   <div class="step-number">3</div>
-                   <div class="step-content">
-                       <h3>Sviluppo</h3>
-                       <p>Implementiamo il progetto utilizzando le tecnologie più adatte e seguendo le migliori pratiche.</p>
-                   </div>
-                   <div class="step-image">
-                       <img src="images/process/development.png" alt="Sviluppo">
-                   </div>
-               </div>
-
-               <div class="process-step">
-                   <div class="step-number">4</div>
-                   <div class="step-content">
-                       <h3>Test e Ottimizzazione</h3>
-                       <p>Testiamo rigorosamente ogni funzionalità e ottimizziamo per garantire prestazioni eccellenti.</p>
-                   </div>
-                   <div class="step-image">
-                       <img src="images/process/testing.png" alt="Test e Ottimizzazione">
-                   </div>
-               </div>
-
-               <div class="process-step">
-                   <div class="step-number">5</div>
-                   <div class="step-content">
-                       <h3>Lancio e Supporto</h3>
-                       <p>Pubblichiamo la tua soluzione e forniamo supporto continuo per garantirne il successo.</p>
-                   </div>
-                   <div class="step-image">
-                       <img src="images/process/launch.png" alt="Lancio e Supporto">
-                   </div>
-               </div>
-           </div>
-       </div>
-   </section>
+    </div>
+</section>
 
 
-    <!-- Pricing Section -->
-   <!-- Pricing Section -->
-   <section id="pricing" class="pricing-section">
-       <div class="container">
-           <h2 class="section-title">TARIFFE TRASPARENTI</h2>
-           <p class="section-subtitle">Scegli il piano perfetto per te</p>
-           <p class="section-subtitle">Funzionalità da valutare con preventivo che potrebbe avere maggiorazioni.</p>
+<!-- Pricing Section -->
+<!-- Pricing Section -->
+<section id="pricing" class="pricing-section">
+    <div class="container">
+        <h2 class="section-title">TARIFFE TRASPARENTI</h2>
+        <p class="section-subtitle">Scegli il piano perfetto per te</p>
+        <p class="section-subtitle">Funzionalità da valutare con preventivo che potrebbe avere maggiorazioni.</p>
 
-           <div class="pricing-container">
-               <!-- App Web -->
-               <div class="pricing-card">
-                   <h3 class="package-title">App Web</h3>
-                   <p class="package-description">Funzionalità essenziali per la tua presenza online.</p>
+        <div class="pricing-container">
+            <!-- App Web -->
+            <div class="pricing-card">
+                <h3 class="package-title">App Web</h3>
+                <p class="package-description">Funzionalità essenziali per la tua presenza online.</p>
 
-                   <div class="price-container">
-                       <h4 class="price">€ 1599</h4>
-                       <p class="payment-terms">PAGABILI IN 3 RATE</p>
-                   </div>
+                <div class="price-container">
+                    <h4 class="price">€ 1599</h4>
+                    <p class="payment-terms">PAGABILI IN 3 RATE</p>
+                </div>
 
-                   <ul class="features-list">
-                       <li>Design Responsive</li>
-                       <li>5+ Pagine Incluse</li>
-                       <li>Supporto Tecnico</li>
-                       <li>Assistenza via WhatsApp</li>
-                   </ul>
+                <ul class="features-list">
+                    <li>Design Responsive</li>
+                    <li>5+ Pagine Incluse</li>
+                    <li>Supporto Tecnico</li>
+                    <li>Assistenza via WhatsApp</li>
+                </ul>
 
-                   <a href="#contact" class="cta-button">Richiedi Preventivo</a>
-               </div>
+                <a href="#contact" class="cta-button">Richiedi Preventivo</a>
+            </div>
 
-               <!-- App Nativa (Featured) -->
-               <div class="pricing-card featured">
-                   <div class="featured-tag">Il più scelto ↓</div>
-                   <h3 class="package-title">App Nativa</h3>
-                   <p class="package-description">La soluzione completa per iOS e Android.</p>
-                   <div class="discount-badge">Risparmi il 18%</div>
+            <!-- App Nativa (Featured) -->
+            <div class="pricing-card featured">
+                <div class="featured-tag">Il più scelto ↓</div>
+                <h3 class="package-title">App Nativa</h3>
+                <p class="package-description">La soluzione completa per iOS e Android.</p>
+                <div class="discount-badge">Risparmi il 18%</div>
 
-                   <div class="price-container">
-                       <h4 class="price">€ 2499</h4>
-                       <span class="original-price">€ 2699</span>
-                       <p class="payment-terms">PAGABILI IN 3 RATE</p>
-                   </div>
+                <div class="price-container">
+                    <h4 class="price">€ 2499</h4>
+                    <span class="original-price">€ 2699</span>
+                    <p class="payment-terms">PAGABILI IN 3 RATE</p>
+                </div>
 
-                   <ul class="features-list">
-                       <li>Compatibilità iOS e Android</li>
-                       <li>Funzionalità Personalizzate</li>
-                       <li>Supporto Tecnico Premium</li>
-                       <li>Assistenza via WhatsApp</li>
-                   </ul>
+                <ul class="features-list">
+                    <li>Compatibilità iOS e Android</li>
+                    <li>Funzionalità Personalizzate</li>
+                    <li>Supporto Tecnico Premium</li>
+                    <li>Assistenza via WhatsApp</li>
+                </ul>
 
-                   <a href="#contact" class="cta-button">Richiedi Preventivo</a>
-               </div>
+                <a href="#contact" class="cta-button">Richiedi Preventivo</a>
+            </div>
 
-               <!-- Soluzione Completa -->
-               <div class="pricing-card">
-                   <h3 class="package-title">Soluzione Completa</h3>
-                   <p class="package-description">App nativa + sito web ottimizzato.</p>
-                   <div class="discount-badge">Risparmi il 21%</div>
+            <!-- Soluzione Completa -->
+            <div class="pricing-card">
+                <h3 class="package-title">Soluzione Completa</h3>
+                <p class="package-description">App nativa + sito web ottimizzato.</p>
+                <div class="discount-badge">Risparmi il 21%</div>
 
-                   <div class="price-container">
-                       <h4 class="price">€ 4999</h4>
-                       <span class="original-price">€ 5199</span>
-                       <p class="payment-terms">PAGABILI IN 3 RATE</p>
-                   </div>
+                <div class="price-container">
+                    <h4 class="price">€ 4999</h4>
+                    <span class="original-price">€ 5199</span>
+                    <p class="payment-terms">PAGABILI IN 3 RATE</p>
+                </div>
 
-                   <ul class="features-list">
-                       <li>App Nativa + Sito Web</li>
-                       <li>Design Premium</li>
-                       <li>Supporto Tecnico Prioritario</li>
-                       <li>Assistenza via WhatsApp</li>
-                   </ul>
+                <ul class="features-list">
+                    <li>App Nativa + Sito Web</li>
+                    <li>Design Premium</li>
+                    <li>Supporto Tecnico Prioritario</li>
+                    <li>Assistenza via WhatsApp</li>
+                </ul>
 
-                   <a href="#contact" class="cta-button">Richiedi Preventivo</a>
-               </div>
+                <a href="#contact" class="cta-button">Richiedi Preventivo</a>
+            </div>
 
-           </div>
-       </div>
-   </section>
+        </div>
+    </div>
+</section>
 
-   <!-- Portfolio Section -->
+<!-- Portfolio Section -->
 <section id="portfolio" class="portfolio-section">
     <div class="container">
         <h2 class="section-title">IL NOSTRO PORTFOLIO</h2>
         <p class="section-subtitle">I nostri progetti principali</p>
-        
+
         <div class="portfolio-filter">
             <button class="filter-btn active" data-filter="all">Tutti</button>
             <button class="filter-btn" data-filter="web">Web</button>
@@ -295,186 +299,220 @@
     </div>
 </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">TESTIMONIANZE</h2>
-            <p class="section-subtitle">Riferimenti di clienti soddisfatti che hanno già beneficiato delle nostre soluzioni</p>
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title">TESTIMONIANZE</h2>
+        <p class="section-subtitle">Riferimenti di clienti soddisfatti che hanno già beneficiato delle nostre soluzioni</p>
 
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Pingo Development ha trasformato la mia idea in un'app di successo. Professionalità e competenza al top!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Marco Rossi</h4>
-                            <p>CEO, TechSolutions</p>
-                        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Pingo Development ha trasformato la mia idea in un'app di successo. Professionalità e competenza al top!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Marco Rossi</h4>
+                        <p>CEO, TechSolutions</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"La nostra app è stata consegnata in tempo e con un design eccezionale. Consigliatissimo!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Laura Bianchi</h4>
-                            <p>Marketing Manager, InnovaRetail</p>
-                        </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"La nostra app è stata consegnata in tempo e con un design eccezionale. Consigliatissimo!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Laura Bianchi</h4>
+                        <p>Marketing Manager, InnovaRetail</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Servizio impeccabile e sempre disponibili per supporto. La nostra applicazione web ha superato le aspettative."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Giovanni Verdi</h4>
-                            <p>Founder, EcoStart</p>
-                        </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Servizio impeccabile e sempre disponibili per supporto. La nostra applicazione web ha superato le aspettative."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Giovanni Verdi</h4>
+                        <p>Founder, EcoStart</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-   <!-- Contact Section -->
-   <section id="contact" class="contact-section">
-       <div class="container">
-           <h2 class="section-title">CONTATTACI</h2>
-           <p class="section-subtitle">Parliamo del tuo progetto</p>
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">CONTATTACI</h2>
+        <p class="section-subtitle">Parliamo del tuo progetto</p>
 
-           <div class="contact-grid">
-               <div class="contact-info">
-                   <div class="contact-info-item">
-                       <i class="fas fa-envelope"></i>
-                       <div class="contact-info-content">
-                           <h3>Email</h3>
-                           <p>j.pingo.development@gmail.com</p>
-                       </div>
-                   </div>
-
-                   <div class="contact-info-item">
-                       <i class="fas fa-phone"></i>
-                       <div class="contact-info-content">
-                           <h3>Telefono</h3>
-                           <p>+39 331 2754741</p>
-                       </div>
-                   </div>
-
-                   <div class="contact-info-item">
-                       <i class="fas fa-map-marker-alt"></i>
-                       <div class="contact-info-content">
-                           <h3>Sede</h3>
-                           <p>Massa, Italia</p>
-                       </div>
-                   </div>
-               </div>
-
-               <form class="contact-form" id="contactForm">
-                   <!-- Chiave di accesso Web3Forms -->
-                   <input type="hidden" name="access_key" value="a2893177-ef68-4b63-9c92-1405e2bac0bf">
-                   <input type="hidden" name="redirect" value="false">
-                   <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                   <div class="form-group">
-                       <label for="name">Nome</label>
-                       <input type="text" id="name" name="name" class="form-control" required>
-                   </div>
-
-                   <div class="form-group">
-                       <label for="email">Email</label>
-                       <input type="email" id="email" name="email" class="form-control" required>
-                   </div>
-
-                   <div class="form-group">
-                       <label for="subject">Oggetto</label>
-                       <input type="text" id="subject" name="subject" class="form-control" required>
-                   </div>
-
-                   <div class="form-group">
-                       <label for="message">Messaggio</label>
-                       <textarea id="message" name="message" class="form-control" required></textarea>
-                   </div>
-
-                   <button type="submit" id="submitBtn" class="cta-button">Invia Messaggio</button>
-                   <div id="result"></div>
-               </form>
-           </div>
-       </div>
-   </section>
-
-   <!-- Modal di successo -->
-   <div class="success-modal" id="successModal">
-       <div class="modal-content">
-           <div class="success-icon">
-               <i class="fas fa-check-circle"></i>
-           </div>
-           <h3>Messaggio Inviato!</h3>
-           <p>Il tuo messaggio è stato inviato con successo.</p>
-           <button class="cta-button close-modal">Chiudi</button>
-       </div>
-   </div>
-
-   <!-- Overlay per il modal -->
-   <div class="modal-overlay" id="modalOverlay"></div>
-
-   <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>Pingo Development</h3>
-                    <p>Trasformiamo le tue idee in realtà digitali</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-info-content">
+                        <h3>Email</h3>
+                        <p>j.pingo.development@gmail.com</p>
                     </div>
                 </div>
-                
-                <div class="footer-links">
-                    <h4>Link Rapidi</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#services">Servizi</a></li>
-                        <li><a href="#pricing">Prezzi</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contatti</a></li>
-                    </ul>
+
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="contact-info-content">
+                        <h3>Telefono</h3>
+                        <p>+39 331 2754741</p>
+                    </div>
                 </div>
-                
-                <div class="newsletter">
-                    <h4>Rimani Aggiornato</h4>
-                    <p>Iscriviti alla nostra newsletter per ricevere aggiornamenti e offerte speciali</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="La tua email">
-                        <button type="submit">Iscriviti</button>
+
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-info-content">
+                        <h3>Sede</h3>
+                        <p>Massa, Italia</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="copyright">
-                © 2025 Pingo Development. Tutti i diritti riservati.
+
+            <form class="contact-form" id="contactForm">
+                <!-- Chiave di accesso Web3Forms -->
+                <input type="hidden" name="access_key" value="a2893177-ef68-4b63-9c92-1405e2bac0bf">
+                <input type="hidden" name="redirect" value="false">
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Oggetto</label>
+                    <input type="text" id="subject" name="subject" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Messaggio</label>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn" class="cta-button">Invia Messaggio</button>
+                <div id="result"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Modal di successo -->
+<div class="success-modal" id="successModal">
+    <div class="modal-content">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Messaggio Inviato!</h3>
+        <p>Il tuo messaggio è stato inviato con successo.</p>
+        <button class="cta-button close-modal">Chiudi</button>
+    </div>
+</div>
+<!-- Assistente Virtuale con robottino -->
+<div id="virtual-assistant-container">
+    <div id="chat-popup" class="chat-popup">
+        <div class="chat-header">
+            <h3><img src="images/pingo_robot.png" alt="Pingo Development Robot"> Assistente Pingo Development </h3>
+            <button id="close-chat">×</button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message assistant">
+                    <div class="message-avatar">
+                        <img src="images/pingo_robot.png" alt="Pingo Robot">
+                    </div>
+                    <p>Ciao! Sono l'assistente virtuale di Pingo. Come posso aiutarti oggi?</p>
+                </div>
+            </div>
+            <div class="quick-questions">
+                <button class="quick-question">Quali servizi offrite?</button>
+                <button class="quick-question">Come funziona il processo di lavoro?</button>
+                <button class="quick-question">Quanto costa un progetto?</button>
+                <button class="quick-question">Vorrei essere ricontattato</button>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-message" placeholder="Scrivi un messaggio...">
+                <button id="send-message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </div>
         </div>
-    </footer>
-   <!-- Pulsante WhatsApp -->
-   <a href="https://wa.me/+393312754741?text=Ciao,%20vorrei%20avere%20informazioni%20sui%20vostri%20servizi" class="whatsapp-button" target="_blank" aria-label="Contattaci su WhatsApp">
-       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-           <path fill="#FFFFFF" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-       </svg>
-   </a>
+    </div>
+    <button id="chat-button" class="chat-button">
+        <img src="images/pingo_robot.png" alt="Pingo Robot">
+    </button>
+</div>
 
-   <!-- Pulsante "Torna su" (assicurati che questo div sia presente nel codice) -->
-   <div class="back-to-top show">
-       <i class="fas fa-arrow-up"></i>
-   </div>
+<!-- Overlay per il modal -->
+<div class="modal-overlay" id="modalOverlay"></div>
 
-    <script src="script.js"></script>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>Pingo Development</h3>
+                <p>Trasformiamo le tue idee in realtà digitali</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Link Rapidi</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Servizi</a></li>
+                    <li><a href="#pricing">Prezzi</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter">
+                <h4>Rimani Aggiornato</h4>
+                <p>Iscriviti alla nostra newsletter per ricevere aggiornamenti e offerte speciali</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="La tua email">
+                    <button type="submit">Iscriviti</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © 2025 Pingo Development. Tutti i diritti riservati.
+        </div>
+    </div>
+</footer>
+<!-- Pulsante WhatsApp -->
+<a href="https://wa.me/+393312754741?text=Ciao,%20vorrei%20avere%20informazioni%20sui%20vostri%20servizi" class="whatsapp-button" target="_blank" aria-label="Contattaci su WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+        <path fill="#FFFFFF" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+</a>
+
+<!-- Pulsante "Torna su" (assicurati che questo div sia presente nel codice) -->
+<div class="back-to-top show">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
